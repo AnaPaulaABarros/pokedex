@@ -1,0 +1,25 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "pokedex_novo",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "pokedex_novo (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Flutter",
+            "request": "launch",
+            "type": "dart",
+            "program": "your_class/file_name_with_main_function"
+        }
+    ]
+}
