@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this, duplicate_ignore
+
 class Pokedex {
   List<String>? abilities;
   String? detailPageUrl;
@@ -33,6 +35,7 @@ class Pokedex {
       this.type});
 
   Pokedex.fromJson(Map<String, dynamic> json) {
+    // ignore: unnecessary_this
     this.abilities =
         json["abilities"] == null ? null : List<String>.from(json["abilities"]);
     this.detailPageUrl = json["detailPageURL"];
@@ -53,6 +56,7 @@ class Pokedex {
   }
 
   Map<String, dynamic> toJson() {
+    // ignore: unnecessary_new, prefer_collection_literals
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.abilities != null) data["abilities"] = this.abilities;
     data["detailPageURL"] = this.detailPageUrl;
