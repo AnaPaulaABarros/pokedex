@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
-//import 'package:pokedex_novo/model/pokedex.dart';
 import 'package:pokedex_novo/presenter/home_presenter.dart';
 import 'package:pokedex_novo/view/item/item.dart';
 import 'package:provider/provider.dart';
 
-// ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
- // List<Pokedex> pokeList = [];
-  //late HomePresenter presenter;
-
-  //@override
-  //void initState() {
-  //  super.initState();
- // }
-
+ 
+ bool future = true;
+ 
   @override
   void didChangeDependencies() {
     context.read<HomePresenter>().obter();
     super.didChangeDependencies();
+    //utilizado para notificar o objeto atual sobre a mudança.
   }
 
   @override
@@ -44,14 +38,15 @@ class _HomePageState extends State<HomePage> {
           ],
         )
         ),
+        //permite reconstruir widgets, alterar, local que pode ter a mudança de estado
         body: Consumer<HomePresenter>(
           builder: (context, value, child) {
             if (value.pokemons.isEmpty)
               return const Center(child: CircularProgressIndicator());
             return ListView.builder(
                 padding: const EdgeInsets.all(20),
-                itemCount: value.pokemons.length,
-                itemBuilder: (context, index) {
+                itemCount: value.pokemons.length, // para especificar o comprimento da lista.
+                itemBuilder: (context, index) { // constrói a lista indexada de itens
                   return Pokeitem(
                     item: value.pokemons[index],
                   );
