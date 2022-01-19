@@ -10,8 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
  
- bool future = true;
- 
+
   @override
   void didChangeDependencies() {
     context.read<HomePresenter>().obter();
